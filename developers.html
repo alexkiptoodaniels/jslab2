@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Developers - Lamborghini</title>
+  <link rel="stylesheet" href="csslab.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #111;
+      color: #f5f5f5;
+    }
+
+    nav {
+      background-color: #f1f1f1;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #111;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    body.dark-mode nav {
+      background-color: #222;
+    }
+
+    body.dark-mode nav a {
+      color: #ffcc00;
+    }
+
+    .header {
+      background-color: #eee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    body.dark-mode .header {
+      background-color: #222;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 250px;
+      height: 300px;
+      perspective: 1000px;
+      margin: auto;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .flip-card-front {
+      background-color: #141313;
+      color: black;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .flip-card-back {
+      background-color: #000;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h2, .card p {
+      margin: 10px 0;
+    }
+
+    /* Toggle Button */
+    .toggle-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    body.dark-mode .toggle-btn {
+      background-color: #f1f1f1;
+      color: #000;
+    }
+
+    /* Live Clock */
+    #live-clock {
+      position: fixed;
+      bottom: 15px;
+      right: 20px;
+      font-size: 1.2em;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      z-index: 1000;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+  <nav>
+    <a href="HOME.html">HOME</a>
+    <a href="URUS.html">LAMBORGHINI MODELS</a>
+    <a href="contactus.html">CONTACTS/LOGIN</a>
+    <a href="developers.html">DEV PAGE</a>
+  </nav>
+
+  <div class="header">
+    <h1>Web Developers of Lamborghini</h1>
+  </div>
+
+  <!-- Lead Developer -->
+  <div class="lead-container" style="margin: 40px 0;">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSShRJY5GMmOpOyZ1Q4bd5r9aBnPEANw2mTVw&s" alt="Lead Developer">
+        </div>
+        <div class="flip-card-back">
+          <h2>LUFFY</h2>
+          <p>10 years of experience in full-stack development. Loves clean code!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team Members -->
+  <div class="team">
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/97/34/83/97348340d38844afb8bb8bafd232db8f.jpg" alt="Zorro">
+      <h2>ZORRO</h2>
+      <p>Frontend Developer</p>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1xzrCamwegEmWXgIafC4csxvqHdhSvl9_Tg&s" alt="Chopper">
+      <h2>CHOPPER</h2>
+      <p>Backend Developer</p>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOo6IC2tFhEWKdftQgckfz-84u7iE1JrKDvQ&s" alt="Franky">
+      <h2>FRANKY ROBOT</h2>
+      <p>A/B Testing Specialist</p>
+    </div>
+  </div>
+
+  <div id="live-clock"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

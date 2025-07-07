@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Lamborghini</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="csslab.css">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      color: #111;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #111;
+      color: #eee;
+    }
+
+    nav {
+      background-color: #f1f1f1;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #111;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    body.dark-mode nav {
+      background-color: #222;
+    }
+
+    body.dark-mode nav a {
+      color: #ffcc00;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5em;
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    .styled-form {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .styled-form {
+      background-color: #222;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .styled-form label {
+      display: block;
+      margin: 10px 0 5px;
+      text-align: left;
+    }
+
+    .styled-form input,
+    .styled-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    .styled-form button {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .styled-form button:hover {
+      background-color: #444;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    body.dark-mode .toggle-btn {
+      background-color: #f1f1f1;
+      color: #000;
+    }
+
+    #live-clock {
+      position: fixed;
+      bottom: 15px;
+      right: 20px;
+      font-size: 1.2em;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: monospace;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn">🌙 Toggle Dark Mode</button>
+
+  <nav>
+    <a href="HOME.html">HOME</a>
+    <a href="URUS.html">LAMBORGHINI MODELS</a>
+    <a href="contactus.html">CONTACTS/LOGIN</a>
+    <a href="developers.html">DEV PAGE</a>
+  </nav>
+
+  <h1>Contact Us</h1>
+
+  <!--   Sign Up Form -->
+  <h2>Create an Account</h2>
+  <form class="styled-form" id="signup-form">
+    <label for="username1">Username (letters only):</label>
+    <input type="text" id="username1" name="username" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="accountType">Select Your Lamborghini Role:</label>
+<select id="accountType" name="accountType" required>
+  <option value="">-- Choose Account Type --</option>
+  <option value="Owner">Lamborghini Owner</option>
+  <option value="EliteDealer">Elite Dealer</option>
+  <option value="TestDriver">Test Driver</option>
+  <option value="FanClub">Fan Club Member</option>
+  <option value="Engineer">Lamborghini Engineer</option>
+</select>
+
+
+    <label for="password1">Password:</label>
+    <input type="password" id="password1" name="password" required>
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <!--   Contact Form -->
+  <h2>Send a Message</h2>
+  <form class="styled-form">
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname" required>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <input type="text" id="message" name="message" required>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!--   Login Form -->
+  <h2>Login to Your Account</h2>
+  <form class="styled-form" id="login-form">
+    <label for="username2">Username:</label>
+    <input type="text" id="username2" name="username" required>
+
+    <label for="password2">Password:</label>
+    <input type="password" id="password2" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <!--   Clock -->
+  <div id="live-clock"></div>
+
+  <!--   External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
